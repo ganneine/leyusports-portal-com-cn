@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>吉祥坊 · 简明指南 | 访问与介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f5f9fc;
+            color: #1e2b3c;
+            line-height: 1.7;
+            padding: 0 1.25rem 2.5rem;
+        }
+
+        .page-wrap {
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        /* hero 横幅 */
+        .hero {
+            background: linear-gradient(145deg, #0b3b4a 0%, #1c6b7c 70%, #2a8b9a 100%);
+            border-radius: 2rem 2rem 2rem 2rem;
+            padding: 3rem 2rem 2.8rem;
+            margin: 1.8rem 0 2.4rem;
+            color: #eaf7fb;
+            box-shadow: 0 12px 24px -8px rgba(8, 60, 72, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero .tagline {
+            font-size: 1.06rem;
+            opacity: 0.88;
+            margin-top: 0.4rem;
+            max-width: 550px;
+            border-left: 4px solid #7fd1df;
+            padding-left: 1rem;
+            background: rgba(0,0,0,0.1);
+            border-radius: 0 12px 12px 0;
+            padding: 0.6rem 1rem;
+            backdrop-filter: blur(2px);
+        }
+
+        .hero .tagline i {
+            font-style: normal;
+            display: inline-block;
+            background: #d6f0f5;
+            color: #0b3b4a;
+            padding: 0.1rem 0.6rem;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        /* 网格卡片网格 */
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+            margin: 2.5rem 0 2.2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 1.6rem;
+            padding: 1.8rem 1.5rem 2rem;
+            box-shadow: 0 6px 18px rgba(12, 60, 72, 0.06);
+            border: 1px solid #d9e8ed;
+            transition: transform 0.18s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 30px -8px rgba(8, 80, 100, 0.12);
+            border-color: #9acbd6;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #105a6b;
+            border-bottom: 3px solid #b3dfe8;
+            padding-bottom: 0.6rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .card h3::before {
+            content: '▣';
+            font-size: 1.2rem;
+            color: #2b8b9b;
+        }
+
+        .card p {
+            color: #274556;
+            font-size: 0.98rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .card .highlight {
+            background: #e4f2f6;
+            border-left: 4px solid #348b9c;
+            padding: 0.4rem 0.8rem;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.92rem;
+            margin-top: 0.8rem;
+        }
+
+        .intro-section {
+            background: white;
+            border-radius: 2rem;
+            padding: 1.8rem 2rem 2.2rem;
+            margin: 2rem 0 2.2rem;
+            border: 1px solid #cfe1e7;
+            box-shadow: 0 4px 14px rgba(10, 58, 70, 0.04);
+        }
+
+        .intro-section h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #0b4d5c;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .intro-section h2 span {
+            background: #1b6b7c;
+            color: white;
+            font-size: 0.9rem;
+            padding: 0.1rem 0.9rem;
+            border-radius: 30px;
+            font-weight: 400;
+        }
+
+        .intro-section p {
+            margin-bottom: 1rem;
+            color: #213c48;
+        }
+
+        .intro-section .tip-box {
+            background: #ecf6f9;
+            padding: 1rem 1.4rem;
+            border-radius: 1.2rem;
+            margin: 1.2rem 0 0.2rem;
+            border-left: 6px solid #2b8b9b;
+        }
+
+        .faq-mini {
+            margin: 2.2rem 0 1.8rem;
+        }
+
+        .faq-mini details {
+            background: white;
+            border: 1px solid #cbdce3;
+            border-radius: 1.2rem;
+            padding: 0.8rem 1.4rem;
+            margin-bottom: 0.8rem;
+            transition: 0.15s;
+        }
+
+        .faq-mini details[open] {
+            border-color: #5eb1c0;
+            box-shadow: 0 2px 8px rgba(28, 108, 125, 0.08);
+        }
+
+        .faq-mini summary {
+            font-weight: 600;
+            color: #0b4d5c;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .faq-mini summary::before {
+            content: '❓';
+            font-size: 1rem;
+            color: #1b7e90;
+        }
+
+        .faq-mini details p {
+            padding: 0.6rem 0 0.2rem 1.2rem;
+            color: #244652;
+            font-size: 0.95rem;
+            border-top: 1px dashed #c2dae2;
+            margin-top: 0.5rem;
+        }
+
+        .footer-note {
+            margin-top: 2.8rem;
+            background: #e1f0f5;
+            border-radius: 2rem;
+            padding: 1.6rem 2rem;
+            text-align: center;
+            border: 1px solid #bfdae3;
+            color: #174f5e;
+            font-size: 1rem;
+        }
+
+        .footer-note a {
+            color: #075567;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 2px solid #71baca;
+            padding-bottom: 0.1rem;
+            transition: 0.15s;
+        }
+
+        .footer-note a:hover {
+            color: #043946;
+            border-bottom-color: #1f7f92;
+        }
+
+        .footer-note .small-meta {
+            display: block;
+            margin-top: 0.6rem;
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 0 0.8rem 2rem;
+            }
+            .hero {
+                padding: 2rem 1.2rem;
+                border-radius: 1.6rem;
+            }
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+            .hero .tagline {
+                font-size: 0.92rem;
+                padding: 0.4rem 0.8rem;
+            }
+            .intro-section {
+                padding: 1.4rem 1.2rem;
+            }
+            .grid-cards {
+                gap: 1.2rem;
+            }
+            .card {
+                padding: 1.4rem 1.1rem;
+            }
+            .faq-mini details {
+                padding: 0.6rem 1rem;
+            }
+            .footer-note {
+                padding: 1.2rem 1rem;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .hero h1 {
+                font-size: 1.4rem;
+            }
+            .card h3 {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+
+    <!-- 首页横幅 hero -->
+    <div class="hero">
+        <h1>吉祥坊 · 简明访问指南</h1>
+        <div class="tagline">
+            <i>指南型</i> 一个整理给需要了解吉祥坊的朋友的页面，内容中立、侧重实用提醒。
+        </div>
+    </div>
+
+    <!-- 背景说明段 + 网格卡片（三块自然介绍之一） -->
+    <div class="intro-section">
+        <h2>📋 为何整理这份说明 <span>背景</span></h2>
+        <p>吉祥坊作为一个网络服务名称，时常被不同用户提及。由于访问方式、域名变动或信息混杂，不少人在第一次接触时感到困惑。这个页面不评价平台本身，而是从“如何准确找到并了解吉祥坊”的角度，梳理几组关键信息，方便你快速建立认知框架。</p>
+        <div class="tip-box">
+            ⚡ 提示：如果你只是听闻过“吉祥坊”这三个字，下面三个卡片能帮你快速定位常见问题。
+        </div>
+    </div>
+
+    <!-- 网格卡片：三段自然介绍 （同时也是特点与场景）-->
+    <div class="grid-cards">
+        <div class="card">
+            <h3>名称与指向</h3>
+            <p>「吉祥坊」是中文网络环境里一个被较多使用的品牌/标识。在搜索或交流时，建议直接使用完整名称「吉祥坊」并核对网址栏。部分仿冒或近似域名可能存在，请留意域名拼写差异。</p>
+            <div class="highlight">✓ 识别核心：域名主体为 <strong>cns-wellbet.com</strong></div>
+        </div>
+        <div class="card">
+            <h3>访问准备</h3>
+            <p>由于网络环境变化，访问某些站点时可能需要保持稳定的网络连接或使用常规浏览器。建议关闭不必要的插件，并确保设备时间与系统设置正确。如果遇到页面加载缓慢，可尝试刷新或更换网络节点。</p>
+            <div class="highlight">🌐 常见做法：清除缓存或使用隐私窗口重试</div>
+        </div>
+        <div class="card">
+            <h3>信息核实</h3>
+            <p>关于吉祥坊的功能、服务或活动，建议以官方网站或官方公告为准。第三方讨论区的内容需要交叉验证，避免因信息滞后产生误解。如需反馈或咨询，优先寻找站内联系方式。</p>
+            <div class="highlight">🔍 官方渠道始终是首要参考</div>
+        </div>
+    </div>
+
+    <!-- 第二段自然介绍：FAQ 摘要 + 访问提醒 -->
+    <div class="faq-mini">
+        <details>
+            <summary>吉祥坊是正规平台吗？如何判断？</summary>
+            <p>任何网络服务是否正规需要结合当地法规、运营资质及用户协议综合判断。建议你亲自浏览<a href="https://cns-wellbet.com">吉祥坊</a>的相关页面，阅读条款与隐私说明，做出自己的判断。本页面不提供任何担保或背书。</p>
+        </details>
+        <details>
+            <summary>为什么有时候打不开吉祥坊？</summary>
+            <p>无法访问可能由网络限制、DNS 解析或站点维护导致。可尝试更换 DNS 为公共 DNS（如 8.8.8.8），或使用不同网络环境。若长期无法访问，请确认使用的域名是否为 <strong>cns-wellbet.com</strong>。</p>
+        </details>
+        <details>
+            <summary>有没有其他了解吉祥坊的途径？</summary>
+            <p>除了直接浏览网站外，也可以通过搜索引擎查找相关资讯，但请注意甄别推广内容与客观描述。始终保持对个人信息的保护意识。</p>
+        </details>
+    </div>
+
+    <!-- 第三段自然介绍：简要提醒 + 落脚 -->
+    <div class="intro-section" style="margin-top: 0.2rem;">
+        <h2>🧭 访问提醒 <span>简明</span></h2>
+        <p>在开始使用任何线上服务前，我们建议你：</p>
+        <ul style="list-style: none; padding-left: 0.2rem; margin: 0.6rem 0 0.2rem; display: flex; flex-wrap: wrap; gap: 0.6rem 1.2rem;">
+            <li style="background: #dceef3; padding: 0.2rem 0.8rem; border-radius: 50px;">✔ 确认域名拼写</li>
+            <li style="background: #dceef3; padding: 0.2rem 0.8rem; border-radius: 50px;">✔ 使用安全网络</li>
+            <li style="background: #dceef3; padding: 0.2rem 0.8rem; border-radius: 50px;">✔ 阅读服务条款</li>
+            <li style="background: #dceef3; padding: 0.2rem 0.8rem; border-radius: 50px;">✔ 保护个人账户</li>
+        </ul>
+        <p style="margin-top: 1rem;">如果你准备进一步了解，可以直接访问 <a href="https://cns-wellbet.com">吉祥坊</a> 查看最新页面。保持理性，按需浏览。</p>
+    </div>
+
+    <!-- 页尾访问提示 -->
+    <div class="footer-note">
+        <div>📌 想要亲自确认？这里有官方地址：<a href="https://cns-wellbet.com">吉祥坊</a></div>
+        <span class="small-meta">本页面仅作信息整理，内容不构成推荐或承诺。请根据自身判断进行访问。</span>
+    </div>
+
+</div>
+</body>
+</html>
