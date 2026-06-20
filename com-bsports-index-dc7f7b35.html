@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一份关于B体育的资料整理 · 信息索引页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fafbfc;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.7;
+            color: #1e2a3a;
+            padding: 2.5rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page {
+            max-width: 680px;
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.03), 0 2px 8px rgba(0, 0, 0, 0.02);
+            padding: 3rem 2.2rem;
+        }
+
+        /* 标题层级 —— 极简留白 */
+        h1 {
+            font-size: 2rem;
+            font-weight: 550;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.3rem;
+            color: #0f1c2b;
+            line-height: 1.3;
+        }
+
+        .subhead {
+            font-size: 1rem;
+            color: #5f6c80;
+            margin-bottom: 2.8rem;
+            border-left: 3px solid #b0c0d0;
+            padding-left: 1rem;
+            font-weight: 400;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-top: 2.8rem;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.01em;
+            color: #1e2a3a;
+            border-bottom: 1px solid #e8ecf0;
+            padding-bottom: 0.4rem;
+        }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 500;
+            margin-top: 1.8rem;
+            margin-bottom: 0.6rem;
+            color: #2a3a4e;
+        }
+
+        p {
+            margin-bottom: 1.6rem;
+            color: #2d3b4e;
+        }
+
+        a {
+            color: #1f5e9a;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-bottom 0.2s, color 0.2s;
+        }
+
+        a:hover {
+            border-bottom-color: #1f5e9a;
+            color: #0a3a66;
+        }
+
+        /* 独特的引用/故事开场 */
+        .story-open {
+            background-color: #f0f4f9;
+            padding: 1.5rem 1.8rem;
+            border-radius: 24px;
+            margin-bottom: 2.4rem;
+            font-style: normal;
+            color: #1f3347;
+            border-left: 0;
+            box-shadow: inset 0 0 0 1px rgba(0,0,0,0.02);
+        }
+
+        .story-open p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 特点列表 — 卡片式，差异于常规列表 */
+        .feature-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin: 1.8rem 0 2rem;
+        }
+
+        .feature-item {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.2rem 1.6rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02), 0 0 0 1px #eef1f5;
+            transition: box-shadow 0.2s;
+        }
+
+        .feature-item:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04), 0 0 0 1px #d0dae6;
+        }
+
+        .feature-item strong {
+            font-weight: 550;
+            display: inline-block;
+            margin-bottom: 0.25rem;
+            color: #193b5c;
+        }
+
+        .feature-item span {
+            display: block;
+            color: #3d4d62;
+            font-size: 0.96rem;
+        }
+
+        /* FAQ 摘要 不喧宾夺主，但体现索引感 */
+        .faq-note {
+            background: #f8faff;
+            border-radius: 20px;
+            padding: 1.5rem 1.8rem;
+            margin: 2.4rem 0 1.6rem;
+            border: 1px solid #e3e9f2;
+        }
+
+        .faq-note p {
+            margin-bottom: 0.8rem;
+            font-size: 0.96rem;
+        }
+
+        .faq-note p:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-note strong {
+            color: #1e3a5a;
+            font-weight: 500;
+        }
+
+        /* 温和结尾 */
+        .gentle-close {
+            margin-top: 3rem;
+            padding-top: 1.6rem;
+            border-top: 1px solid #e3e9ef;
+            font-size: 0.95rem;
+            color: #4a5b70;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .gentle-close small {
+            opacity: 0.7;
+        }
+
+        /* 响应式 */
+        @media (max-width: 520px) {
+            body {
+                padding: 0.8rem;
+            }
+            .page {
+                padding: 2rem 1.2rem;
+                border-radius: 20px;
+            }
+            h1 {
+                font-size: 1.6rem;
+            }
+            .story-open {
+                padding: 1.2rem;
+            }
+            .feature-item {
+                padding: 1rem 1.2rem;
+            }
+            .gentle-close {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 开场短句 -->
+    <h1>信息索引 · 关于B体育</h1>
+    <div class="subhead">资料整理手记：一条线索，多种切面</div>
+
+    <!-- 故事叙述式开场 -->
+    <div class="story-open">
+        <p>几年前开始整理网络服务索引时，我习惯把每一个值得留意的平台单独做成卡片。后来信息越积越多，反而是一些简洁、克制的记录更容易被回头翻看。关于 <a href="https://com-bsports.com">B体育</a> 的这条笔记，最初只是几行功能和入口，之后慢慢补充了使用场景和特点。这篇页面相当于把那些分散的记录重新梳理了一遍——不夸张，只把实在观察到的东西写下来。</p>
+    </div>
+
+    <!-- 承接段落 -->
+    <p>从索引的角度看，一个平台最基础的信息往往藏在细节里：它提供什么，不提供什么，适合哪一类需求。下面列出的几个特点，是我在整理资料、对比同类服务时留意到的。如果你也在做类似的信息收集，或许会觉得这些点有些用处。</p>
+
+    <!-- 特点列表 -->
+    <h2>资料整理中看到的几个特点</h2>
+    <div class="feature-grid">
+        <div class="feature-item">
+            <strong>内容覆盖的广度</strong>
+            <span>在梳理过程中发现，B体育 涉及的领域比预想中要宽，从赛事动态到社区讨论都有对应的板块。索引时不用频繁跳转其他站点，这一点对资料收集来说比较省力。</span>
+        </div>
+        <div class="feature-item">
+            <strong>界面逻辑偏直白</strong>
+            <span>初次接触时，各功能入口的位置和命名都比较常规，几乎没有需要猜测的交互。这种风格在整理截图或撰写说明时不容易产生歧义。</span>
+        </div>
+        <div class="feature-item">
+            <strong>信息更新节奏稳定</strong>
+            <span>观察了一段时间，发现平台的内容更新频率大致固定，没有突然的大幅变动。对于需要长期跟踪同一来源的人来说，这种节奏更有利于建立索引习惯。</span>
+        </div>
+        <div class="feature-item">
+            <strong>对移动端阅读友好</strong>
+            <span>用手机浏览时，排版没有明显变形，文字和按钮大小也适中。这一点在记录移动端使用体验时尤为重要。</span>
+        </div>
+    </div>
+
+    <!-- 场景/提示 用一个小段落过渡 -->
+    <p>当然，以上只是个人整理资料时的感受。每个人的使用习惯不同，实际体验也可能不一样。如果你也在尝试建立自己的信息索引，不妨亲自看一看 <a href="https://com-bsports.com">B体育</a> 的页面布局，再根据你的需求做判断。</p>
+
+    <!-- FAQ 摘要 —— 更像“常见观察” -->
+    <h2>一些常被问到的细节</h2>
+    <div class="faq-note">
+        <p><strong>是否需要注册才能浏览？</strong> 根据公开资料，大部分内容无需登录即可查看，但部分互动或个性化功能可能需要账号。具体以平台实际规则为准。</p>
+        <p><strong>资料整理时应该关注哪些栏目？</strong> 建议先看导航栏的一级分类，再根据关键词深入。信息结构不算复杂，通常两三层就能找到目标内容。</p>
+        <p><strong>有没有公开的 API 或文档？</strong> 就目前公开信息来看，平台没有提供官方 API 文档，索引主要依靠前端页面结构。</p>
+    </div>
+
+    <!-- 温和结尾 -->
+    <div class="gentle-close">
+        <span>这份索引记录基于公开信息整理，仅作为个人笔记分享。</span>
+        <small>最近更新 · 2025</small>
+    </div>
+
+</div>
+</body>
+</html>
